@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Alert from '../../components/alerts';
 import Table from '../../components/table';
-import { userService } from '../../services/services';
+import { userService } from '../../helper/services';
 import Container from '../../components/container';
 import Loader from '../../components/loader';
-import { Validator, ErrorMessages, isAllValid } from '../../services/validator';
+import { Validator, ErrorMessages, isAllValid } from '../../helper/validator';
 import './parcels.scss';
 
 class Parcels extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { userService } from '../../services/services';
+import { userService } from '../../helper/services';
 import './dashboard.scss';
 import Container from '../../components/container';
 import Alert from '../../components/alerts';

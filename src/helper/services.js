@@ -1,4 +1,4 @@
-import { authHeader } from './helper';
+import { authHeader } from './common';
 
 const apiUrl = "http://localhost:3000/api/v1/";
 

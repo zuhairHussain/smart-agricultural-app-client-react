@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Alert from '../../components/alerts';
 import Loader from '../../components/loader';
 import Container from '../../components/container';
-import { Validator, ErrorMessages, isAllValid } from '../../services/validator';
-import { userService } from '../../services/services';
+import { Validator, ErrorMessages, isAllValid } from '../../helper/validator';
+import { userService } from '../../helper/services';
 import { history } from '../../history';
 import './login.scss';
 
