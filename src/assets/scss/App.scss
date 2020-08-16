@@ -45,10 +45,23 @@ body{
       float: left;
       transition: .3s;
       border-right: 1px solid #e8eaeb;
+      background-image: url(https://img.freepik.com/free-photo/potato-plantations-grow-field-vegetable-rows-farming-agriculture-landscape_72572-50.jpg?size=626&ext=jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(63,63,63,.67);
+      }
       .nav-item {
         .nav-link{
           display: block;
-          color: #6e6e6e;
+          color: #fff;
           line-height: 22px;
           font-size: 18px;
           position: relative;
@@ -59,7 +72,7 @@ body{
             display: block;
           }
           &.active{
-            background-color: #ececec;
+            background-color: #bea01d;
           }
         }
       }
@@ -136,6 +149,19 @@ body{
         padding: 0 16px;
       }
     }
+    .btn-primary {
+      &:not(:disabled):not(.disabled){
+        color: #fff;
+        background-color: #bea01d;
+        border-color: #a58910;
+        &:hover, &:active, &:focus{
+          background-color: #dfba1a;
+          border-color: #c0a220;
+          box-shadow: 0 0 0 0.2rem rgba(209, 168, 22, .42);
+        }
+      }
+      
+  }
     
     @media (min-width: 992px) {
       &{

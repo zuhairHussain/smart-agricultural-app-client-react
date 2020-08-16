@@ -8,6 +8,7 @@ export const userService = {
     register,
     addProcessParcel,
     getProcessParcels,
+    getProcessedParcelsArea,
     addParcel,
     getParcels,
     addTractor,
@@ -98,6 +99,15 @@ function getParcels() {
     };
 
     return fetch(`${apiUrl}parcels`, requestOptions).then(handleResponse);
+}
+
+function getProcessedParcelsArea() {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(`${apiUrl}process-parcels-area`, requestOptions).then(handleResponse);
 }
 
 function addTractor(data) {
