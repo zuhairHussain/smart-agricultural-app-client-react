@@ -4,6 +4,7 @@ import './dashboard.scss';
 import Container from '../../components/container';
 import Alert from '../../components/alerts';
 import Loader from '../../components/loader';
+import { NavLink } from 'react-router-dom';
 class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -56,7 +57,7 @@ class Dashboard extends Component {
     generateParcels = () => {
         const { parcels } = this.state;
         return parcels.length ? parcels.map(d => {
-            const { totalAreasProcessed, area, name, culture } = d;
+            const { totalAreasProcessed, area, name, culture, _id } = d;
 
             let processedAreaPercent = area - totalAreasProcessed;
             processedAreaPercent = (processedAreaPercent / area) * 100;
@@ -78,7 +79,9 @@ class Dashboard extends Component {
                                     <div className="progress-bar bg-success" role="progressbar" style={{ width: `${processedAreaPercent ? processedAreaPercent : "0"}%` }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </li>
-                            <li className="list-group-item"><a href="#" className="card-link">View Report</a></li>
+                            <li className={`${!totalAreasProcessed ? "disable" : ""} list-group-item`}>
+                                <NavLink exact to={`/report/${_id}`} className="card-link" activeClassName="active">View Report</NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -93,9 +96,8 @@ class Dashboard extends Component {
 
     render() {
         const { loading } = this.state;
-
         return (
-            <Container className="parcels-wrapper">
+            <Container className="report-wrapper">
                 <h2 className="mb-5">Report</h2>
 
                 <div className="row">

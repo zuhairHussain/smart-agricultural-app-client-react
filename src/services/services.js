@@ -9,6 +9,7 @@ export const userService = {
     addProcessParcel,
     getProcessParcels,
     getProcessedParcelsArea,
+    getProcessParcelsById,
     addParcel,
     getParcels,
     addTractor,
@@ -76,6 +77,16 @@ function getProcessParcels() {
 
     return fetch(`${apiUrl}process-parcels`, requestOptions).then(handleResponse);
 }
+
+function getProcessParcelsById(id) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(`${apiUrl}process-parcels-by-id/${id}`, requestOptions).then(handleResponse);
+}
+
 
 function addParcel(data) {
     const requestOptions = {
